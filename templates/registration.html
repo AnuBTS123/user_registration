@@ -1,0 +1,49 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+    <title>Registration</title>
+{% endblock %}
+
+{% block body_block %}
+    <style>
+        form
+        {
+            background-color: lavender;
+        }
+        input
+        {
+            color: blue;
+            background-color: gold;
+        }
+        body
+        {
+            background-color: rgb(170, 67, 170);
+        }
+        input,textarea
+        {
+            background-color: palevioletred;
+            border-radius: 10px;
+        }
+        label
+        {
+            color: rgb(209, 30, 30);
+        }
+        label
+        {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+
+    <center>
+        <h1>registration form</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+               {{UFO.as_p}}
+               {{PFO.as_p}}
+
+        <input type="submit" value="register">
+        </form>
+    </center>
+{% endblock %}
